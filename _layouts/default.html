@@ -1,12 +1,3 @@
----
-title:          Chris Scanlin's Projects
-image_folder:   /screenshots/
-max_width:      900px
-sort_by:        modified_time   # modified_time or path (notice: path is case sensitive)
-date_format:    "%A, %B %-d, %Y"
----
-<!-- Based on https://github.com/lthr/github-gallery -->
-
 <!DOCTYPE html>
 <html>
 
@@ -43,7 +34,30 @@ date_format:    "%A, %B %-d, %Y"
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <div>{% page.image_folder %}</div>
+        <!-- Based on https://github.com/lthr/github-gallery -->
+        <ul class="ins-imgs">
+
+            {% assign imgs = (site.static_files | sort: site.sort_by) %}
+            {% for img in imgs %}
+              {% if img.path contains site.image_folder %}
+                {% assign img_name = img.path | remove: site.image_folder | split: '.' | first %}
+
+                <li class="ins-imgs-li" id="{{ img_name }}">
+                  <div class="ins-imgs-img">
+                    <a name="{{ img.path }}" href="">
+                      <img
+                        src=".{{ img.path }}"
+                        alt="{{ img_name }}"
+                      />
+                    </a>
+                  </div>
+                  <div class="ins-imgs-label">Image name: {{ img_name }} (added {{ img_date }})</div>
+                </li>
+
+              {% endif %}
+            {% endfor %}
+
+        </ul>
       </section>
     </div>
 
