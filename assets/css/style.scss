@@ -1,0 +1,21 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.inner {
+  max-width: 800px;
+}
+
+.gallery-images {
+  list-style: none;
+}
+
+h4 {
+  margin: 0px;
+}
+
+.about-repo-container {
+  margin-top: -20px;
+  margin-bottom: 10px;
+}

@@ -35,23 +35,27 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <!-- Based on https://github.com/lthr/github-gallery -->
-        <ul class="ins-imgs">
+        <ul class="gallery-images">
 
             {% assign imgs = (site.static_files | sort: site.sort_by) %}
             {% for img in imgs %}
               {% if img.path contains site.image_folder %}
-                {% assign img_name = img.path | remove: site.image_folder | split: '.' | first %}
+                {% assign repo_name = img.path | remove: site.image_folder | split: '.' | first %}
+                {% assign repo_data = site.data.repo_data[repo_name] %}
 
-                <li class="ins-imgs-li" id="{{ img_name }}">
-                  <div class="ins-imgs-img">
-                    <a name="{{ img.path }}" href="">
+                <li class="gallery-images-li" id="{{ repo_name }}">
+                  <div class="gallery-image-container">
+                    <a name="{{ img.path }}" href="{{ repo_data.homepage }}">
                       <img
                         src=".{{ img.path }}"
-                        alt="{{ img_name }}"
+                        alt="{{ repo_name }}"
                       />
                     </a>
                   </div>
-                  <div class="ins-imgs-label">Image name: {{ img_name }} (added {{ img_date }})</div>
+                  <div class="about-repo-container">
+                    <a href="{{ repo_data.html_url }}"><h4>{{ repo_data.name }}</h4></a>
+                    <span>{{ repo_data.description }}</span>
+                  </div>
                 </li>
 
               {% endif %}
@@ -65,7 +69,7 @@
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         {% if site.github.is_project_page %}
-        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        <p class="copyright">{{ site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>

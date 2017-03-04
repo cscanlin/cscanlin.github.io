@@ -1,6 +1,7 @@
 import os
 import logging
 import requests
+import yaml
 from selenium import webdriver
 from urllib.parse import urlparse
 import __main__
@@ -32,14 +33,17 @@ class Screenshotter(object):
                  repository_urls,
                  width=1280,
                  height=800,
-                 output_directory='screenshots',
+                 screenshot_directory='screenshots',
                  screenshot_format='png',
+                 data_dump_directory='_data',
                  logger=default_logger):
         self.repositories = [Repository(url) for url in repository_urls]
         self.width = width
         self.height = height
-        self.output_directory = output_directory
+        self.screenshot_directory = screenshot_directory
         self.screenshot_format = screenshot_format
+        self.driver = None
+        self.data_dump_directory = data_dump_directory
         self.logger = logger
         self.logger.setLevel(logging.INFO)
         self.logger.addHandler(get_log_handler())
@@ -59,12 +63,19 @@ class Screenshotter(object):
 
     def screenshot_path(self, repository):
         file_name = '{0}.{1}'.format(repository.repo_data['name'], self.screenshot_format)
-        return os.path.join(self.output_directory, file_name)
+        return os.path.join(self.screenshot_directory, file_name)
 
     def run(self):
         for repo in self.repositories:
             repo.screenshot = self.capture_screenshot(repo)
         self.logger.info('All finished!')
+
+    def dump_repo_data(self):
+        formatted_data = {repo.repo_data['name']: repo.repo_data for repo in self.repositories}
+        export_path = os.path.join(self.data_dump_directory, 'repo_data.yml')
+        with open(export_path, 'w') as ef:
+            yaml.dump(formatted_data, ef, default_flow_style=False)
+        self.logger.info('Finsihed Dumping')
 
 if __name__ == '__main__':
     repository_urls = [
@@ -75,3 +86,4 @@ if __name__ == '__main__':
     ]
     with Screenshotter(repository_urls) as ss:
         ss.run()
+        ss.dump_repo_data()
