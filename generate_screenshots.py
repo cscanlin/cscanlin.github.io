@@ -2,18 +2,12 @@ import os
 import logging
 import requests
 import yaml
-from collections import OrderedDict
 from datetime import datetime
 from selenium import webdriver
 from urllib.parse import urlparse
 import __main__
 
 default_logger = logging.getLogger(__main__.__file__)
-
-yaml.add_representer(
-    OrderedDict,
-    lambda dumper, data: dumper.represent_dict(data.items())
-)
 
 def get_log_handler():
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -83,15 +77,18 @@ class Screenshotter(object):
     def capture_screenshot(self, repository):
         self.driver.get(repository.homepage)
         self.logger.info('finished: {}'.format(repository.name))
-        return self.driver.save_screenshot(self.screenshot_path(repository))
+        filename = self.screenshot_filename(repository)
+        self.driver.save_screenshot(
+            os.path.join(self.screenshot_directory, filename)
+        )
+        return filename
 
-    def screenshot_path(self, repository):
-        file_name = '{}_{}.{}'.format(
+    def screenshot_filename(self, repository):
+        return '{}_{}.{}'.format(
             repository.name,
             self.init_time,
             self.screenshot_format,
         )
-        return os.path.join(self.screenshot_directory, file_name)
 
     def run(self):
         self.clear_screenshot_directory()
@@ -100,7 +97,7 @@ class Screenshotter(object):
         self.logger.info('All finished!')
 
     def dump_repo_data(self):
-        formatted_data = OrderedDict([(repo.name, repo.__dict__) for repo in self.repositories])
+        formatted_data = [repo.__dict__ for repo in self.repositories]
         export_path = os.path.join(self.data_dump_directory, 'repo_data.yml')
         with open(export_path, 'w') as ef:
             yaml.dump(formatted_data, ef, default_flow_style=False)

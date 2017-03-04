@@ -36,33 +36,23 @@
       <section id="main_content" class="inner">
         <!-- Based on https://github.com/lthr/github-gallery -->
         <ul class="gallery-images">
-
-            {% assign imgs = (site.static_files | sort: site.sort_by) %}
-            {% for img in imgs %}
-              {% if img.path contains site.image_folder %}
-                {% assign file_name = img.path | remove: site.image_folder | split: '.' | first %}
-                {% assign file_name_length = file_name | size | minus: 20 %}
-                {% assign repo_name = file_name | slice: 0, file_name_length  %}
-                {% assign repo_data = site.data.repo_data[repo_name] %}
-
-                <li class="gallery-images-li" id="{{ repo_name }}">
-                  <div class="gallery-image-container">
-                    <a name="{{ img.path }}" href="{{ repo_data.homepage }}">
-                      <img
-                        src=".{{ img.path }}"
-                        alt="{{ repo_name }}"
-                      />
-                    </a>
-                  </div>
-                  <div class="about-repo-container">
-                    <a href="{{ repo_data.html_url }}"><h4>{{ repo_name }}</h4></a>
-                    <span>{{ repo_data.description }}</span>
-                  </div>
-                </li>
-
-              {% endif %}
-            {% endfor %}
-
+          {% for repo in site.data.repo_data %}
+            {% assign image_path = site.image_folder | append: repo.screenshot %}
+            <li class="gallery-images-li" id="{{ repo.name }}">
+              <div class="gallery-image-container">
+                <a name="{{ image_path }}" href="{{ repo.homepage }}">
+                  <img
+                    src=".{{ image_path }}"
+                    alt="{{ repo.name }}"
+                  />
+                </a>
+              </div>
+              <div class="about-repo-container">
+                <a href="{{ repo.html_url }}"><h4>{{ repo.name }}</h4></a>
+                <span>{{ repo.description }}</span>
+              </div>
+            </li>
+          {% endfor %}
         </ul>
       </section>
     </div>
