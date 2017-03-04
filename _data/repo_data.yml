@@ -1,3 +1,93 @@
+munger-builder:
+  archive_url: https://api.github.com/repos/cscanlin/munger-builder/{archive_format}{/ref}
+  assignees_url: https://api.github.com/repos/cscanlin/munger-builder/assignees{/user}
+  blobs_url: https://api.github.com/repos/cscanlin/munger-builder/git/blobs{/sha}
+  branches_url: https://api.github.com/repos/cscanlin/munger-builder/branches{/branch}
+  clone_url: https://github.com/cscanlin/munger-builder.git
+  collaborators_url: https://api.github.com/repos/cscanlin/munger-builder/collaborators{/collaborator}
+  comments_url: https://api.github.com/repos/cscanlin/munger-builder/comments{/number}
+  commits_url: https://api.github.com/repos/cscanlin/munger-builder/commits{/sha}
+  compare_url: https://api.github.com/repos/cscanlin/munger-builder/compare/{base}...{head}
+  contents_url: https://api.github.com/repos/cscanlin/munger-builder/contents/{+path}
+  contributors_url: https://api.github.com/repos/cscanlin/munger-builder/contributors
+  created_at: '2015-11-06T06:30:03Z'
+  default_branch: master
+  deployments_url: https://api.github.com/repos/cscanlin/munger-builder/deployments
+  description: A Django application for generating custom data manipulation scripts
+    with Python + Pandas, using a drag and drop GUI built with React
+  downloads_url: https://api.github.com/repos/cscanlin/munger-builder/downloads
+  events_url: https://api.github.com/repos/cscanlin/munger-builder/events
+  fork: false
+  forks: 1
+  forks_count: 1
+  forks_url: https://api.github.com/repos/cscanlin/munger-builder/forks
+  full_name: cscanlin/munger-builder
+  git_commits_url: https://api.github.com/repos/cscanlin/munger-builder/git/commits{/sha}
+  git_refs_url: https://api.github.com/repos/cscanlin/munger-builder/git/refs{/sha}
+  git_tags_url: https://api.github.com/repos/cscanlin/munger-builder/git/tags{/sha}
+  git_url: git://github.com/cscanlin/munger-builder.git
+  has_downloads: true
+  has_issues: true
+  has_pages: false
+  has_wiki: true
+  homepage: http://www.mungerbuilder.com
+  hooks_url: https://api.github.com/repos/cscanlin/munger-builder/hooks
+  html_url: https://github.com/cscanlin/munger-builder
+  id: 45663822
+  issue_comment_url: https://api.github.com/repos/cscanlin/munger-builder/issues/comments{/number}
+  issue_events_url: https://api.github.com/repos/cscanlin/munger-builder/issues/events{/number}
+  issues_url: https://api.github.com/repos/cscanlin/munger-builder/issues{/number}
+  keys_url: https://api.github.com/repos/cscanlin/munger-builder/keys{/key_id}
+  labels_url: https://api.github.com/repos/cscanlin/munger-builder/labels{/name}
+  language: JavaScript
+  languages_url: https://api.github.com/repos/cscanlin/munger-builder/languages
+  merges_url: https://api.github.com/repos/cscanlin/munger-builder/merges
+  milestones_url: https://api.github.com/repos/cscanlin/munger-builder/milestones{/number}
+  mirror_url: null
+  name: munger-builder
+  network_count: 1
+  notifications_url: https://api.github.com/repos/cscanlin/munger-builder/notifications{?since,all,participating}
+  open_issues: 0
+  open_issues_count: 0
+  owner:
+    avatar_url: https://avatars1.githubusercontent.com/u/2954573?v=3
+    events_url: https://api.github.com/users/cscanlin/events{/privacy}
+    followers_url: https://api.github.com/users/cscanlin/followers
+    following_url: https://api.github.com/users/cscanlin/following{/other_user}
+    gists_url: https://api.github.com/users/cscanlin/gists{/gist_id}
+    gravatar_id: ''
+    html_url: https://github.com/cscanlin
+    id: 2954573
+    login: cscanlin
+    organizations_url: https://api.github.com/users/cscanlin/orgs
+    received_events_url: https://api.github.com/users/cscanlin/received_events
+    repos_url: https://api.github.com/users/cscanlin/repos
+    site_admin: false
+    starred_url: https://api.github.com/users/cscanlin/starred{/owner}{/repo}
+    subscriptions_url: https://api.github.com/users/cscanlin/subscriptions
+    type: User
+    url: https://api.github.com/users/cscanlin
+  private: false
+  pulls_url: https://api.github.com/repos/cscanlin/munger-builder/pulls{/number}
+  pushed_at: '2016-08-14T01:52:23Z'
+  releases_url: https://api.github.com/repos/cscanlin/munger-builder/releases{/id}
+  screenshot: true
+  size: 6002
+  ssh_url: git@github.com:cscanlin/munger-builder.git
+  stargazers_count: 2
+  stargazers_url: https://api.github.com/repos/cscanlin/munger-builder/stargazers
+  statuses_url: https://api.github.com/repos/cscanlin/munger-builder/statuses/{sha}
+  subscribers_count: 1
+  subscribers_url: https://api.github.com/repos/cscanlin/munger-builder/subscribers
+  subscription_url: https://api.github.com/repos/cscanlin/munger-builder/subscription
+  svn_url: https://github.com/cscanlin/munger-builder
+  tags_url: https://api.github.com/repos/cscanlin/munger-builder/tags
+  teams_url: https://api.github.com/repos/cscanlin/munger-builder/teams
+  trees_url: https://api.github.com/repos/cscanlin/munger-builder/git/trees{/sha}
+  updated_at: '2016-11-30T21:23:32Z'
+  url: https://api.github.com/repos/cscanlin/munger-builder
+  watchers: 2
+  watchers_count: 2
 choice-optimizer:
   archive_url: https://api.github.com/repos/cscanlin/choice-optimizer/{archive_format}{/ref}
   assignees_url: https://api.github.com/repos/cscanlin/choice-optimizer/assignees{/user}
@@ -175,96 +265,6 @@ minesweeper:
   trees_url: https://api.github.com/repos/cscanlin/minesweeper/git/trees{/sha}
   updated_at: '2017-03-03T03:31:50Z'
   url: https://api.github.com/repos/cscanlin/minesweeper
-  watchers: 2
-  watchers_count: 2
-munger-builder:
-  archive_url: https://api.github.com/repos/cscanlin/munger-builder/{archive_format}{/ref}
-  assignees_url: https://api.github.com/repos/cscanlin/munger-builder/assignees{/user}
-  blobs_url: https://api.github.com/repos/cscanlin/munger-builder/git/blobs{/sha}
-  branches_url: https://api.github.com/repos/cscanlin/munger-builder/branches{/branch}
-  clone_url: https://github.com/cscanlin/munger-builder.git
-  collaborators_url: https://api.github.com/repos/cscanlin/munger-builder/collaborators{/collaborator}
-  comments_url: https://api.github.com/repos/cscanlin/munger-builder/comments{/number}
-  commits_url: https://api.github.com/repos/cscanlin/munger-builder/commits{/sha}
-  compare_url: https://api.github.com/repos/cscanlin/munger-builder/compare/{base}...{head}
-  contents_url: https://api.github.com/repos/cscanlin/munger-builder/contents/{+path}
-  contributors_url: https://api.github.com/repos/cscanlin/munger-builder/contributors
-  created_at: '2015-11-06T06:30:03Z'
-  default_branch: master
-  deployments_url: https://api.github.com/repos/cscanlin/munger-builder/deployments
-  description: A Django application for generating custom data manipulation scripts
-    with Python + Pandas, using a drag and drop GUI built with React
-  downloads_url: https://api.github.com/repos/cscanlin/munger-builder/downloads
-  events_url: https://api.github.com/repos/cscanlin/munger-builder/events
-  fork: false
-  forks: 1
-  forks_count: 1
-  forks_url: https://api.github.com/repos/cscanlin/munger-builder/forks
-  full_name: cscanlin/munger-builder
-  git_commits_url: https://api.github.com/repos/cscanlin/munger-builder/git/commits{/sha}
-  git_refs_url: https://api.github.com/repos/cscanlin/munger-builder/git/refs{/sha}
-  git_tags_url: https://api.github.com/repos/cscanlin/munger-builder/git/tags{/sha}
-  git_url: git://github.com/cscanlin/munger-builder.git
-  has_downloads: true
-  has_issues: true
-  has_pages: false
-  has_wiki: true
-  homepage: http://www.mungerbuilder.com
-  hooks_url: https://api.github.com/repos/cscanlin/munger-builder/hooks
-  html_url: https://github.com/cscanlin/munger-builder
-  id: 45663822
-  issue_comment_url: https://api.github.com/repos/cscanlin/munger-builder/issues/comments{/number}
-  issue_events_url: https://api.github.com/repos/cscanlin/munger-builder/issues/events{/number}
-  issues_url: https://api.github.com/repos/cscanlin/munger-builder/issues{/number}
-  keys_url: https://api.github.com/repos/cscanlin/munger-builder/keys{/key_id}
-  labels_url: https://api.github.com/repos/cscanlin/munger-builder/labels{/name}
-  language: JavaScript
-  languages_url: https://api.github.com/repos/cscanlin/munger-builder/languages
-  merges_url: https://api.github.com/repos/cscanlin/munger-builder/merges
-  milestones_url: https://api.github.com/repos/cscanlin/munger-builder/milestones{/number}
-  mirror_url: null
-  name: munger-builder
-  network_count: 1
-  notifications_url: https://api.github.com/repos/cscanlin/munger-builder/notifications{?since,all,participating}
-  open_issues: 0
-  open_issues_count: 0
-  owner:
-    avatar_url: https://avatars1.githubusercontent.com/u/2954573?v=3
-    events_url: https://api.github.com/users/cscanlin/events{/privacy}
-    followers_url: https://api.github.com/users/cscanlin/followers
-    following_url: https://api.github.com/users/cscanlin/following{/other_user}
-    gists_url: https://api.github.com/users/cscanlin/gists{/gist_id}
-    gravatar_id: ''
-    html_url: https://github.com/cscanlin
-    id: 2954573
-    login: cscanlin
-    organizations_url: https://api.github.com/users/cscanlin/orgs
-    received_events_url: https://api.github.com/users/cscanlin/received_events
-    repos_url: https://api.github.com/users/cscanlin/repos
-    site_admin: false
-    starred_url: https://api.github.com/users/cscanlin/starred{/owner}{/repo}
-    subscriptions_url: https://api.github.com/users/cscanlin/subscriptions
-    type: User
-    url: https://api.github.com/users/cscanlin
-  private: false
-  pulls_url: https://api.github.com/repos/cscanlin/munger-builder/pulls{/number}
-  pushed_at: '2016-08-14T01:52:23Z'
-  releases_url: https://api.github.com/repos/cscanlin/munger-builder/releases{/id}
-  screenshot: true
-  size: 6002
-  ssh_url: git@github.com:cscanlin/munger-builder.git
-  stargazers_count: 2
-  stargazers_url: https://api.github.com/repos/cscanlin/munger-builder/stargazers
-  statuses_url: https://api.github.com/repos/cscanlin/munger-builder/statuses/{sha}
-  subscribers_count: 1
-  subscribers_url: https://api.github.com/repos/cscanlin/munger-builder/subscribers
-  subscription_url: https://api.github.com/repos/cscanlin/munger-builder/subscription
-  svn_url: https://github.com/cscanlin/munger-builder
-  tags_url: https://api.github.com/repos/cscanlin/munger-builder/tags
-  teams_url: https://api.github.com/repos/cscanlin/munger-builder/teams
-  trees_url: https://api.github.com/repos/cscanlin/munger-builder/git/trees{/sha}
-  updated_at: '2016-11-30T21:23:32Z'
-  url: https://api.github.com/repos/cscanlin/munger-builder
   watchers: 2
   watchers_count: 2
 periodic-table-timeline:

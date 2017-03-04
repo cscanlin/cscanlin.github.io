@@ -1,14 +1,19 @@
 import os
 import logging
 import requests
-import shutil
 import yaml
+from collections import OrderedDict
 from datetime import datetime
 from selenium import webdriver
 from urllib.parse import urlparse
 import __main__
 
 default_logger = logging.getLogger(__main__.__file__)
+
+yaml.add_representer(
+    OrderedDict,
+    lambda dumper, data: dumper.represent_dict(data.items())
+)
 
 def get_log_handler():
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -26,9 +31,20 @@ class Repository(object):
             setattr(self, k, v)
 
     @classmethod
-    def from_url(cls, repo_url):
+    def retrieve_from_url(cls, repo_url):
         api_path = '{0}{1}'.format(Repository.REPO_API_PATH, urlparse(repo_url).path)
-        return cls(requests.get(api_path).json())
+        repo_data = requests.get(api_path).json()
+        return cls(repo_data)
+
+    @classmethod
+    def parse_from_url(cls, repo_url):
+        repo_data = {
+            'name': repo_url.split('/')[-1],
+            'html_url': repo_url,
+        }
+        repo_data['homepage'] = 'https://cscanlin.github.io/{}'.format(repo_data['name'])
+        return repo_data
+
 
 class Screenshotter(object):
     def __init__(self,
@@ -39,16 +55,16 @@ class Screenshotter(object):
                  screenshot_format='png',
                  data_dump_directory='_data',
                  logger=default_logger):
-        self.repositories = [Repository.from_url(url) for url in repository_urls]
+        self.repositories = [Repository.retrieve_from_url(url) for url in repository_urls]
         self.width = width
         self.height = height
         self.screenshot_directory = screenshot_directory
         self.screenshot_format = screenshot_format
-        self.driver = None
         self.data_dump_directory = data_dump_directory
         self.logger = logger
         self.logger.setLevel(logging.INFO)
         self.logger.addHandler(get_log_handler())
+        self.driver = None
         self.init_time = datetime.utcnow().replace(microsecond=0).isoformat()
 
     def __enter__(self):
@@ -84,7 +100,7 @@ class Screenshotter(object):
         self.logger.info('All finished!')
 
     def dump_repo_data(self):
-        formatted_data = {repo.name: repo.__dict__ for repo in self.repositories}
+        formatted_data = OrderedDict([(repo.name, repo.__dict__) for repo in self.repositories])
         export_path = os.path.join(self.data_dump_directory, 'repo_data.yml')
         with open(export_path, 'w') as ef:
             yaml.dump(formatted_data, ef, default_flow_style=False)
