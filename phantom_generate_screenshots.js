@@ -27,7 +27,7 @@ function getRepoData(repoURL, callback) {
 
 function generateScreenshot(repoData) {
   page.open(repoData.homepage, function () {
-    page.render('images/' + repoData.name + '.png')
+    page.render('screenshots/' + repoData.name + '.png')
     console.log('finished: ' + repoData.name)
     setTimeout(nextPage, 100)
   })

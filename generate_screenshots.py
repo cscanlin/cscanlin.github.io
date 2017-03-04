@@ -32,7 +32,7 @@ class Screenshotter(object):
                  repository_urls,
                  width=1280,
                  height=800,
-                 output_directory='images',
+                 output_directory='screenshots',
                  screenshot_format='png',
                  logger=default_logger):
         self.repositories = [Repository(url) for url in repository_urls]
