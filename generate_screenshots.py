@@ -34,11 +34,14 @@ class Repository(object):
     @classmethod
     def parse_data_from_url(cls, repo_url, screenshot_target=None):
         repo_data = {
-            'name': repo_url.split('/')[-1],
+            'name': repo_url.rstrip('/').split('/')[-1],
             'html_url': repo_url,
         }
         repo_data['homepage'] = 'https://cscanlin.github.io/{}'.format(repo_data['name'])
         return cls(repo_data, screenshot_target)
+
+    def __str__(self):
+        return self.name
 
 class Screenshotter(object):
     def __init__(self,
