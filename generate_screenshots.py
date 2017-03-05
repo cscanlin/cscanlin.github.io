@@ -5,11 +5,9 @@ import yaml
 from datetime import datetime
 from selenium import webdriver
 from urllib.parse import urlparse
-import __main__
 
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))
-
-default_logger = logging.getLogger(__main__.__file__)
+default_logger = logging.getLogger(__file__)
 
 def get_log_handler():
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -118,17 +116,3 @@ if __name__ == '__main__':
     with Screenshotter.from_file('repositories.yml') as ss:
         ss.run()
         ss.dump_repo_data()
-
-# Alternatively:
-# repositories = [
-#     Repository.retrieve_from_url(
-#         repo_url='https://github.com/cscanlin/munger-builder',
-#         screenshot_target='http://www.mungerbuilder.com/script_builder/pivot_builder/1',
-#     )
-#     Repository.retrieve_from_url('https://github.com/cscanlin/choice-optimizer')
-#     Repository.retrieve_from_url('https://github.com/cscanlin/minesweeper')
-#     Repository.retrieve_from_url('https://github.com/cscanlin/periodic-table-timeline')
-# ]
-# with Screenshotter(repositories) as ss:
-#     ss.run()
-#     ss.dump_repo_data()
