@@ -26,12 +26,9 @@ class Repository(object):
             setattr(self, k, v)
 
     @classmethod
-    def retrieve_from_url(cls, repo_url, screenshot_target=None, allow_request=True):
-        if allow_request:
-            api_path = '{0}{1}'.format(Repository.REPO_API_PATH, urlparse(repo_url).path)
-            repo_data = requests.get(api_path).json()
-        else:
-            repo_data = cls.parse_data_from_url(repo_url)
+    def retrieve_from_url(cls, repo_url, screenshot_target=None):
+        api_path = '{0}{1}'.format(Repository.REPO_API_PATH, urlparse(repo_url).path)
+        repo_data = requests.get(api_path).json()
         return cls(repo_data, screenshot_target)
 
     @staticmethod
@@ -73,9 +70,9 @@ class Screenshotter(object):
         self.driver.quit()
 
     @classmethod
-    def from_urls(cls, repository_urls):
-        repo_target_pairs = [r if isinstance(r, tuple) else (r, None) for r in repository_urls]
-        return cls([Repository.retrieve_from_url(url, target) for url, target in repo_target_pairs])
+    def from_file(cls, filename='repositories.yml'):
+        with open(filename) as f:
+            return cls([Repository.retrieve_from_url(**item) for item in yaml.load(f)])
 
     def clear_screenshot_directory(self):
         for f in os.listdir(self.screenshot_directory):
@@ -112,15 +109,20 @@ class Screenshotter(object):
         self.logger.info('Finsihed Dumping')
 
 if __name__ == '__main__':
-    repository_urls = [
-        (
-            'https://github.com/cscanlin/munger-builder',
-            'http://www.mungerbuilder.com/script_builder/pivot_builder/1',
-        ),
-        'https://github.com/cscanlin/choice-optimizer',
-        'https://github.com/cscanlin/minesweeper',
-        'https://github.com/cscanlin/periodic-table-timeline',
-    ]
-    with Screenshotter.from_urls(repository_urls) as ss:
+    with Screenshotter.from_file('repositories.yml') as ss:
         ss.run()
         ss.dump_repo_data()
+
+# Alternatively:
+# repositories = [
+#     Repository.retrieve_from_url(
+#         repo_url='https://github.com/cscanlin/munger-builder',
+#         screenshot_target='http://www.mungerbuilder.com/script_builder/pivot_builder/1',
+#     )
+#     Repository.retrieve_from_url('https://github.com/cscanlin/choice-optimizer')
+#     Repository.retrieve_from_url('https://github.com/cscanlin/minesweeper')
+#     Repository.retrieve_from_url('https://github.com/cscanlin/periodic-table-timeline')
+# ]
+# with Screenshotter(repositories) as ss:
+#     ss.run()
+#     ss.dump_repo_data()
