@@ -37,7 +37,7 @@
         <!-- Based on https://github.com/lthr/github-gallery -->
         <ul class="gallery-images">
           {% for repo in site.data.repo_data %}
-            {% assign image_path = site.image_folder | append: repo.screenshot %}
+            {% assign image_path = site.screenshot_directory | append: repo.screenshot %}
             <li class="gallery-images-li" id="{{ repo.name }}">
               <div class="gallery-image-container">
                 <a name="{{ image_path }}" href="{{ repo.homepage }}">

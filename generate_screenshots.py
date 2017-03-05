@@ -7,6 +7,8 @@ from selenium import webdriver
 from urllib.parse import urlparse
 import __main__
 
+THIS_DIR = os.path.dirname(os.path.realpath(__file__))
+
 default_logger = logging.getLogger(__main__.__file__)
 
 def get_log_handler():
@@ -45,14 +47,17 @@ class Screenshotter(object):
                  repositories,
                  width=1280,
                  height=800,
-                 screenshot_directory='screenshots',
+                 screenshot_directory=None,
                  screenshot_format='png',
                  data_dump_directory='_data',
                  logger=default_logger):
         self.repositories = repositories
         self.width = width
         self.height = height
-        self.screenshot_directory = screenshot_directory
+        if screenshot_directory:
+            self.screenshot_directory = screenshot_directory
+        else:
+            self.screenshot_directory = self.get_screenshot_dir_from_config()
         self.screenshot_format = screenshot_format
         self.data_dump_directory = data_dump_directory
         self.logger = logger
@@ -73,6 +78,11 @@ class Screenshotter(object):
     def from_file(cls, filename='repositories.yml'):
         with open(filename) as f:
             return cls([Repository.retrieve_from_url(**item) for item in yaml.load(f)])
+
+    @staticmethod
+    def get_screenshot_dir_from_config():
+        with open('_config.yml') as f:
+            return os.path.join(THIS_DIR, yaml.load(f)['screenshot_directory'][1:])
 
     def clear_screenshot_directory(self):
         for f in os.listdir(self.screenshot_directory):
