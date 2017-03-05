@@ -33,14 +33,14 @@ class Repository(object):
         repo_data = requests.get(api_path).json()
         return cls(repo_data, screenshot_target)
 
-    @staticmethod
-    def parse_data_from_url(repo_url):
+    @classmethod
+    def parse_data_from_url(cls, repo_url, screenshot_target=None):
         repo_data = {
             'name': repo_url.split('/')[-1],
             'html_url': repo_url,
         }
         repo_data['homepage'] = 'https://cscanlin.github.io/{}'.format(repo_data['name'])
-        return repo_data
+        return cls(repo_data, screenshot_target)
 
 class Screenshotter(object):
     def __init__(self,
@@ -48,9 +48,9 @@ class Screenshotter(object):
                  width=1280,
                  height=800,
                  screenshot_directory=None,
-                 screenshot_format='png',
                  data_dump_directory='_data',
-                 logger=default_logger):
+                 logger=default_logger,
+                 driver_type=webdriver.Firefox):
         self.repositories = repositories
         self.width = width
         self.height = height
@@ -58,16 +58,16 @@ class Screenshotter(object):
             self.screenshot_directory = screenshot_directory
         else:
             self.screenshot_directory = self.get_screenshot_dir_from_config()
-        self.screenshot_format = screenshot_format
         self.data_dump_directory = data_dump_directory
         self.logger = logger
         self.logger.setLevel(logging.INFO)
         self.logger.addHandler(get_log_handler())
         self.driver = None
+        self.driver_type = driver_type
         self.init_time = datetime.utcnow().replace(microsecond=0).isoformat()
 
     def __enter__(self):
-        self.driver = webdriver.Firefox()
+        self.driver = self.driver_type()
         self.driver.set_window_size(self.width, self.height)
         return self
 
@@ -99,11 +99,7 @@ class Screenshotter(object):
         return filename
 
     def screenshot_filename(self, repository):
-        return '{}_{}.{}'.format(
-            repository.name,
-            self.init_time,
-            self.screenshot_format,
-        )
+        return '{}_{}.png'.format(repository.name, self.init_time)
 
     def run(self):
         self.clear_screenshot_directory()
