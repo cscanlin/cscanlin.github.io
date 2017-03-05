@@ -42,13 +42,14 @@
               <div class="gallery-image-container">
                 <a name="{{ image_path }}" href="{{ repo.homepage }}">
                   <img
+                    class="gallery-image"
                     src=".{{ image_path }}"
                     alt="{{ repo.name }}"
                   />
                 </a>
               </div>
               <div class="about-repo-container">
-                <a href="{{ repo.html_url }}"><h4>{{ repo.name }}</h4></a>
+                <a href="{{ repo.html_url }}"><h4 class="repo-name">{{ repo.name }}</h4></a>
                 <span>{{ repo.description }}</span>
               </div>
             </li>
