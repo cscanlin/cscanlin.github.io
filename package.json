@@ -1,0 +1,12 @@
+{
+  "name": "cscanlin.github.io",
+  "homepage": "https://cscanlin.github.io/",
+  "private": true,
+  "version": "1.1.0",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "js-yaml": "^3.8.2",
+    "nightmare": "^2.10.0"
+  },
+  "devDependencies": {}
+}

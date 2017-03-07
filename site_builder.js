@@ -1,43 +1,101 @@
-"use strict";
+'use strict'
 
-var Nightmare = require('nightmare');
-var nightmare = Nightmare({ show: true });
+const Nightmare = require('nightmare')
+const yaml = require('js-yaml')
+const fs = require('fs')
+const url = require('url')
+require('isomorphic-fetch')
 
-const REPO_API_PATH = 'https://api.github.com/repos'
+const INIT_TIME = new Date().toISOString().split('.')[0]
+
+const load_yaml_file = (filename) => yaml.safeLoad(fs.readFileSync(filename, 'utf8'))
+
+const config = load_yaml_file('./_config.yml')
 
 class Repository {
 
-  constructor(repo_url, screenshot_target) {
+  constructor(repo_data, screenshot_target) {
     this.screenshot_target = screenshot_target ? screenshot_target : repo_data.homepage
-    const repo_data = this.parse_data_from_url(repo_url)
+    this.screenshot = null
     Object.keys(repo_data).forEach(key => {
       this[key] = repo_data[key]
     })
   }
 
-  parse_data_from_url(repo_url) {
+  static retrieve_from_url(repo_url, screenshot_target) {
+    const full_api_path = `https://api.github.com/repos${url.parse(repo_url).pathname}`
+    return new Promise((resolve, reject) => {
+      fetch(full_api_path).then(response => {
+        return response.json()
+      }).then(repo_data => {
+        resolve(new Repository(repo_data, screenshot_target))
+      }).catch(reject)
+    })
+  }
+
+  static parse_data_from_url(repo_url, screenshot_target) {
     const repo_data = {
       name: repo_url.split('/').reverse()[0],
       html_url: repo_url,
     }
-    console.log(repo_data);
-    repo_data.homepage = 'https://cscanlin.github.io/' + repo_data.name
-    return repo_data
+    repo_data.homepage = `https://cscanlin.github.io/${repo_data.name}`
+    return new Repository(repo_data, screenshot_target)
   }
 
-  toString() {
-    return this.name
+  screenshot_filename() {
+    return `${this.name}_${INIT_TIME}.png`
   }
 }
 
-console.log(new Repository('https://github.com/cscanlin/munger-builder', 'target').toString());
+class Screenshotter {
+  constructor(repositories) {
+    this.repositories = repositories
+  }
 
-// nightmare
-//   .goto('https://duckduckgo.com')
-//   .screenshot('test.png')
-//   .goto('https://google.com')
-//   .screenshot('test2.png')
-//   .end()
-//   .then(function (result) {
-//     console.log(result);
-//   })
+  clear_screenshot_directory() {
+    fs.readdir(config.screenshot_directory, (err, file_names) => {
+      file_names.forEach(file_name => {
+        if (file_name !== '.keep') {
+          fs.unlinkSync(config.screenshot_directory + '/' +file_name)
+        }
+      })
+    })
+  }
+
+  capture_screenshots() {
+    // https://github.com/rosshinkley/nightmare-examples/blob/master/docs/common-pitfalls/async-operations-loops.md
+    const nightmare = Nightmare({ show: true })
+    nightmare.viewport(config.screenshot_width, config.screenshot_height)
+    this.repositories.reduce((accumulator, repo) => {
+      return accumulator.then(results => {
+        return nightmare.goto(repo.screenshot_target)
+          .screenshot(`${config.screenshot_directory}/${repo.screenshot_filename()}`)
+          .then(function(result){
+            console.log(`finished: ${repo.name}`)
+            results.push(result)
+            return results
+          })
+      })
+    }, Promise.resolve([])).then(results => {
+        nightmare.end().then(() => {
+          console.log('All finished!')
+        })
+    })
+  }
+
+  dump_repo_data() {
+    fs.writeFileSync('_data/repo_data.yml', yaml.safeDump(this.repositories), 'utf8')
+    console.log('Finsihed Dumping')
+  }
+
+  run() {
+    this.clear_screenshot_directory()
+    this.capture_screenshots()
+    this.dump_repo_data()
+  }
+
+}
+
+Promise.all(config.repositories.map(repo => {
+  return Repository.retrieve_from_url(repo.repo_url, repo.screenshot_target)
+})).then((repositories) => new Screenshotter(repositories).run())
