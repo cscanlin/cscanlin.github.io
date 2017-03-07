@@ -8,9 +8,7 @@ require('isomorphic-fetch')
 
 const INIT_TIME = new Date().toISOString().split('.')[0]
 
-const load_yaml_file = (filename) => yaml.safeLoad(fs.readFileSync(filename, 'utf8'))
-
-const config = load_yaml_file('./_config.yml')
+const config = yaml.safeLoad(fs.readFileSync('./_config.yml', 'utf8'))
 
 class Repository {
 
@@ -71,7 +69,7 @@ class Screenshotter {
         return nightmare.goto(repo.screenshot_target)
           .screenshot(`${config.screenshot_directory}/${repo.screenshot_filename()}`)
           .then(function(result){
-            console.log(`finished: ${repo.name}`)
+            console.log(`Finished: ${repo.name}`)
             results.push(result)
             return results
           })
@@ -85,7 +83,7 @@ class Screenshotter {
 
   dump_repo_data() {
     fs.writeFileSync('_data/repo_data.yml', yaml.safeDump(this.repositories), 'utf8')
-    console.log('Finsihed Dumping')
+    console.log('Finsihed Dumping Data')
   }
 
   run() {
