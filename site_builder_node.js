@@ -22,12 +22,10 @@ class Repository {
 
   static retrieve_from_url(repo_url, screenshot_target) {
     const full_api_path = `https://api.github.com/repos${url.parse(repo_url).pathname}`
-    return new Promise((resolve, reject) => {
-      fetch(full_api_path).then(response => {
-        return response.json()
-      }).then(repo_data => {
-        resolve(new Repository(repo_data, screenshot_target))
-      }).catch(reject)
+    return fetch(full_api_path).then(response => {
+      return response.json()
+    }).then(repo_data => {
+      return new Repository(repo_data, screenshot_target)
     })
   }
 
@@ -46,7 +44,7 @@ class Repository {
 
   sorted() {
     // http://stackoverflow.com/a/29622653/1883900
-    return Object.keys(this).sort().reduce((r, k) => (r[k] = this[k], r), {});
+    return Object.keys(this).sort().reduce((r, k) => (r[k] = this[k], r), {})
   }
 }
 
