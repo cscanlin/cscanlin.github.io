@@ -9,9 +9,12 @@ repositories:
 
   - repo_url: https://github.com/cscanlin/choice-optimizer
 
-  - repo_url: https://github.com/cscanlin/minesweeper
+  - repo_url: https://github.com/cscanlin/pages_project_gallery
+    screenshot_target: https://cscanlin.github.io/
 
   - repo_url: https://github.com/cscanlin/films_api
     screenshot_target: https://films-api.herokuapp.com/films/
+
+  - repo_url: https://github.com/cscanlin/minesweeper
 
   - repo_url: https://github.com/cscanlin/periodic-table-timeline
