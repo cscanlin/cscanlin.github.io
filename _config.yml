@@ -9,7 +9,7 @@ repositories:
 
   - repo_url: https://github.com/cscanlin/choice-optimizer
 
-  - repo_url: https://github.com/cscanlin/pages_project_gallery
+  - repo_url: https://github.com/cscanlin/pages-project-gallery
     screenshot_target: https://cscanlin.github.io/
 
   - repo_url: https://github.com/cscanlin/films_api
