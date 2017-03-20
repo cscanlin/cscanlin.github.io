@@ -70,11 +70,15 @@
     received_events_url: 'https://api.github.com/users/cscanlin/received_events'
     type: User
     site_admin: false
+  permissions:
+    admin: true
+    push: true
+    pull: true
   private: false
   pulls_url: 'https://api.github.com/repos/cscanlin/munger-builder/pulls{/number}'
   pushed_at: '2017-03-18T00:48:00Z'
   releases_url: 'https://api.github.com/repos/cscanlin/munger-builder/releases{/id}'
-  screenshot: 'munger-builder_2017-03-18T22:33:50.png'
+  screenshot: 'munger-builder_2017-03-20T01:08:18.png'
   screenshot_target: 'http://www.mungerbuilder.com/script_builder/pivot_builder/1'
   size: 6778
   ssh_url: 'git@github.com:cscanlin/munger-builder.git'
@@ -167,11 +171,15 @@
     received_events_url: 'https://api.github.com/users/cscanlin/received_events'
     type: User
     site_admin: false
+  permissions:
+    admin: true
+    push: true
+    pull: true
   private: false
   pulls_url: 'https://api.github.com/repos/cscanlin/choice-optimizer/pulls{/number}'
   pushed_at: '2017-03-02T13:30:10Z'
   releases_url: 'https://api.github.com/repos/cscanlin/choice-optimizer/releases{/id}'
-  screenshot: 'choice-optimizer_2017-03-18T22:33:50.png'
+  screenshot: 'choice-optimizer_2017-03-20T01:08:18.png'
   screenshot_target: 'https://cscanlin.github.io/choice-optimizer/'
   size: 8994
   ssh_url: 'git@github.com:cscanlin/choice-optimizer.git'
@@ -190,64 +198,75 @@
   watchers: 1
   watchers_count: 1
 - archive_url: >-
-    https://api.github.com/repos/cscanlin/pages-project-gallery/{archive_format}{/ref}
-  assignees_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/assignees{/user}'
-  blobs_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/git/blobs{/sha}'
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/{archive_format}{/ref}
+  assignees_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/assignees{/user}
+  blobs_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/git/blobs{/sha}
   branches_url: >-
-    https://api.github.com/repos/cscanlin/pages-project-gallery/branches{/branch}
-  clone_url: 'https://github.com/cscanlin/pages-project-gallery.git'
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/branches{/branch}
+  clone_url: 'https://github.com/cscanlin/generator-pages-project-gallery.git'
   collaborators_url: >-
-    https://api.github.com/repos/cscanlin/pages-project-gallery/collaborators{/collaborator}
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/collaborators{/collaborator}
   comments_url: >-
-    https://api.github.com/repos/cscanlin/pages-project-gallery/comments{/number}
-  commits_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/commits{/sha}'
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/comments{/number}
+  commits_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/commits{/sha}
   compare_url: >-
-    https://api.github.com/repos/cscanlin/pages-project-gallery/compare/{base}...{head}
-  contents_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/contents/{+path}'
-  contributors_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/contributors'
-  created_at: '2017-03-05T05:35:58Z'
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/compare/{base}...{head}
+  contents_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/contents/{+path}
+  contributors_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/contributors
+  created_at: '2017-03-18T22:41:43Z'
   default_branch: master
-  deployments_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/deployments'
-  description: >-
-    Easily generate a simple project gallery on github pages from a list of
-    other github repositories.
-  downloads_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/downloads'
-  events_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/events'
+  deployments_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/deployments
+  description: A yeoman generator to create a project gallery on github pages
+  downloads_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/downloads
+  events_url: 'https://api.github.com/repos/cscanlin/generator-pages-project-gallery/events'
   fork: false
   forks: 0
   forks_count: 0
-  forks_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/forks'
-  full_name: cscanlin/pages-project-gallery
+  forks_url: 'https://api.github.com/repos/cscanlin/generator-pages-project-gallery/forks'
+  full_name: cscanlin/generator-pages-project-gallery
   git_commits_url: >-
-    https://api.github.com/repos/cscanlin/pages-project-gallery/git/commits{/sha}
-  git_refs_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/git/refs{/sha}'
-  git_tags_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/git/tags{/sha}'
-  git_url: 'git://github.com/cscanlin/pages-project-gallery.git'
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/git/commits{/sha}
+  git_refs_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/git/refs{/sha}
+  git_tags_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/git/tags{/sha}
+  git_url: 'git://github.com/cscanlin/generator-pages-project-gallery.git'
   has_downloads: true
   has_issues: true
   has_pages: false
   has_wiki: true
   homepage: 'https://cscanlin.github.io/'
-  hooks_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/hooks'
-  html_url: 'https://github.com/cscanlin/pages-project-gallery'
-  id: 83947726
+  hooks_url: 'https://api.github.com/repos/cscanlin/generator-pages-project-gallery/hooks'
+  html_url: 'https://github.com/cscanlin/generator-pages-project-gallery'
+  id: 85436666
   issue_comment_url: >-
-    https://api.github.com/repos/cscanlin/pages-project-gallery/issues/comments{/number}
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/issues/comments{/number}
   issue_events_url: >-
-    https://api.github.com/repos/cscanlin/pages-project-gallery/issues/events{/number}
-  issues_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/issues{/number}'
-  keys_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/keys{/key_id}'
-  labels_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/labels{/name}'
-  language: Python
-  languages_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/languages'
-  merges_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/merges'
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/issues/events{/number}
+  issues_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/issues{/number}
+  keys_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/keys{/key_id}
+  labels_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/labels{/name}
+  language: JavaScript
+  languages_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/languages
+  merges_url: 'https://api.github.com/repos/cscanlin/generator-pages-project-gallery/merges'
   milestones_url: >-
-    https://api.github.com/repos/cscanlin/pages-project-gallery/milestones{/number}
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/milestones{/number}
   mirror_url: null
-  name: pages-project-gallery
+  name: generator-pages-project-gallery
   network_count: 0
   notifications_url: >-
-    https://api.github.com/repos/cscanlin/pages-project-gallery/notifications{?since,all,participating}
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/notifications{?since,all,participating}
   open_issues: 0
   open_issues_count: 0
   owner:
@@ -268,28 +287,39 @@
     received_events_url: 'https://api.github.com/users/cscanlin/received_events'
     type: User
     site_admin: false
+  permissions:
+    admin: true
+    push: true
+    pull: true
   private: false
-  pulls_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/pulls{/number}'
-  pushed_at: '2017-03-16T05:22:15Z'
-  releases_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/releases{/id}'
-  screenshot: 'pages-project-gallery_2017-03-18T22:33:50.png'
+  pulls_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/pulls{/number}
+  pushed_at: '2017-03-20T00:56:53Z'
+  releases_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/releases{/id}
+  screenshot: 'generator-pages-project-gallery_2017-03-20T01:08:18.png'
   screenshot_target: 'https://cscanlin.github.io/'
-  size: 32
-  ssh_url: 'git@github.com:cscanlin/pages-project-gallery.git'
-  stargazers_count: 2
-  stargazers_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/stargazers'
-  statuses_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/statuses/{sha}'
+  size: 13
+  ssh_url: 'git@github.com:cscanlin/generator-pages-project-gallery.git'
+  stargazers_count: 0
+  stargazers_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/stargazers
+  statuses_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/statuses/{sha}
   subscribers_count: 1
-  subscribers_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/subscribers'
-  subscription_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/subscription'
-  svn_url: 'https://github.com/cscanlin/pages-project-gallery'
-  tags_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/tags'
-  teams_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/teams'
-  trees_url: 'https://api.github.com/repos/cscanlin/pages-project-gallery/git/trees{/sha}'
-  updated_at: '2017-03-18T22:29:52Z'
-  url: 'https://api.github.com/repos/cscanlin/pages-project-gallery'
-  watchers: 2
-  watchers_count: 2
+  subscribers_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/subscribers
+  subscription_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/subscription
+  svn_url: 'https://github.com/cscanlin/generator-pages-project-gallery'
+  tags_url: 'https://api.github.com/repos/cscanlin/generator-pages-project-gallery/tags'
+  teams_url: 'https://api.github.com/repos/cscanlin/generator-pages-project-gallery/teams'
+  trees_url: >-
+    https://api.github.com/repos/cscanlin/generator-pages-project-gallery/git/trees{/sha}
+  updated_at: '2017-03-19T10:12:28Z'
+  url: 'https://api.github.com/repos/cscanlin/generator-pages-project-gallery'
+  watchers: 0
+  watchers_count: 0
 - archive_url: 'https://api.github.com/repos/cscanlin/films_api/{archive_format}{/ref}'
   assignees_url: 'https://api.github.com/repos/cscanlin/films_api/assignees{/user}'
   blobs_url: 'https://api.github.com/repos/cscanlin/films_api/git/blobs{/sha}'
@@ -358,11 +388,15 @@
     received_events_url: 'https://api.github.com/users/cscanlin/received_events'
     type: User
     site_admin: false
+  permissions:
+    admin: true
+    push: true
+    pull: true
   private: false
   pulls_url: 'https://api.github.com/repos/cscanlin/films_api/pulls{/number}'
   pushed_at: '2017-03-18T02:10:14Z'
   releases_url: 'https://api.github.com/repos/cscanlin/films_api/releases{/id}'
-  screenshot: 'films_api_2017-03-18T22:33:50.png'
+  screenshot: 'films_api_2017-03-20T01:08:18.png'
   screenshot_target: 'https://films-api.herokuapp.com/films/'
   size: 2122
   ssh_url: 'git@github.com:cscanlin/films_api.git'
@@ -449,11 +483,15 @@
     received_events_url: 'https://api.github.com/users/cscanlin/received_events'
     type: User
     site_admin: false
+  permissions:
+    admin: true
+    push: true
+    pull: true
   private: false
   pulls_url: 'https://api.github.com/repos/cscanlin/minesweeper/pulls{/number}'
   pushed_at: '2017-03-03T03:20:54Z'
   releases_url: 'https://api.github.com/repos/cscanlin/minesweeper/releases{/id}'
-  screenshot: 'minesweeper_2017-03-18T22:33:50.png'
+  screenshot: 'minesweeper_2017-03-20T01:08:18.png'
   screenshot_target: 'https://cscanlin.github.io/minesweeper/'
   size: 1414
   ssh_url: 'git@github.com:cscanlin/minesweeper.git'
@@ -554,13 +592,17 @@
     received_events_url: 'https://api.github.com/users/cscanlin/received_events'
     type: User
     site_admin: false
+  permissions:
+    admin: true
+    push: true
+    pull: true
   private: false
   pulls_url: 'https://api.github.com/repos/cscanlin/periodic-table-timeline/pulls{/number}'
-  pushed_at: '2017-03-10T02:29:33Z'
+  pushed_at: '2017-03-19T03:20:39Z'
   releases_url: 'https://api.github.com/repos/cscanlin/periodic-table-timeline/releases{/id}'
-  screenshot: 'periodic-table-timeline_2017-03-18T22:33:50.png'
+  screenshot: 'periodic-table-timeline_2017-03-20T01:08:18.png'
   screenshot_target: 'http://cscanlin.github.io/periodic-table-timeline/'
-  size: 589
+  size: 590
   ssh_url: 'git@github.com:cscanlin/periodic-table-timeline.git'
   stargazers_count: 0
   stargazers_url: 'https://api.github.com/repos/cscanlin/periodic-table-timeline/stargazers'

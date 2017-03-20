@@ -25,21 +25,12 @@ class Repository {
   }
 
   static retrieve_from_url(repo_url, screenshot_target) {
-    const full_api_path = `https://api.github.com/repos${url.parse(repo_url).pathname}`
+    const full_api_path = `https://api.github.com/repos${url.parse(repo_url).pathname}?access_token=${process.env.GITHUB_API_KEY}`
     return fetch(full_api_path).then(response => {
       return response.json()
     }).then(repo_data => {
       return new Repository(repo_data, screenshot_target)
     })
-  }
-
-  static _parse_data_from_url(repo_url, screenshot_target) {
-    const repo_data = {
-      name: repo_url.split('/').reverse()[0],
-      html_url: repo_url,
-    }
-    repo_data.homepage = `https://cscanlin.github.io/${repo_data.name}`
-    return new Repository(repo_data, screenshot_target)
   }
 
   screenshot_filename() {

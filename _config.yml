@@ -1,5 +1,10 @@
+author: cscanlin
 title: cscanlin.github.io
-theme: jekyll-theme-slate
+domain: cscanlin.github.io
+theme: jekyll-theme-cayman
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'site_builder_node.js']
+
+# Site Builder
 screenshot_directory: ./assets/images/screenshots/
 screenshot_width: 1280
 screenshot_height: 800
@@ -9,7 +14,7 @@ repositories:
 
   - repo_url: https://github.com/cscanlin/choice-optimizer
 
-  - repo_url: https://github.com/cscanlin/pages-project-gallery
+  - repo_url: https://github.com/cscanlin/generator-pages-project-gallery
     screenshot_target: https://cscanlin.github.io/
 
   - repo_url: https://github.com/cscanlin/films_api

@@ -2,7 +2,7 @@
   "name": "cscanlin.github.io",
   "homepage": "https://cscanlin.github.io/",
   "private": true,
-  "version": "1.1.0",
+  "version": "2.0.0",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
     "js-yaml": "^3.8.2",
@@ -12,7 +12,7 @@
     "eslint": "^3.17.1"
   },
   "scripts": {
-    "run": "bundle exec jekyll serve",
+    "start": "bundle exec jekyll serve",
     "build": "node site_builder_node.js",
     "deploy": "git push origin master"
   }
