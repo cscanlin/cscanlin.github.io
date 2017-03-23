@@ -67,10 +67,7 @@ class Screenshotter {
     this.repositories.reduce((accumulator, repo) => {
       return accumulator.then(results => {
         return nightmare.goto(repo.screenshot_target)
-          .viewport(
-            repo.screenshot_width ? repo.screenshot_width : config.screenshot_width,
-            repo.screenshot_height ? repo.screenshot_height : config.screenshot_height
-          )
+          .viewport(repo.screenshot_width, repo.screenshot_height)
           .screenshot(`${config.screenshot_directory}/${repo.screenshot_filename()}`)
           .then(result => {
             console.log(`Finished: ${repo.name}`)

@@ -78,7 +78,7 @@
   pulls_url: 'https://api.github.com/repos/cscanlin/munger-builder/pulls{/number}'
   pushed_at: '2017-03-18T00:48:00Z'
   releases_url: 'https://api.github.com/repos/cscanlin/munger-builder/releases{/id}'
-  screenshot: 'munger-builder_2017-03-23T09:13:02.png'
+  screenshot: 'munger-builder_2017-03-23T09:19:15.png'
   screenshot_height: 800
   screenshot_target: 'http://www.mungerbuilder.com/script_builder/pivot_builder/1'
   screenshot_width: 1280
@@ -181,7 +181,7 @@
   pulls_url: 'https://api.github.com/repos/cscanlin/choice-optimizer/pulls{/number}'
   pushed_at: '2017-03-02T13:30:10Z'
   releases_url: 'https://api.github.com/repos/cscanlin/choice-optimizer/releases{/id}'
-  screenshot: 'choice-optimizer_2017-03-23T09:13:02.png'
+  screenshot: 'choice-optimizer_2017-03-23T09:19:15.png'
   screenshot_height: 650
   screenshot_target: 'https://cscanlin.github.io/choice-optimizer/'
   screenshot_width: 1280
@@ -301,7 +301,7 @@
   pushed_at: '2017-03-20T00:56:53Z'
   releases_url: >-
     https://api.github.com/repos/cscanlin/generator-pages-project-gallery/releases{/id}
-  screenshot: 'generator-pages-project-gallery_2017-03-23T09:13:02.png'
+  screenshot: 'generator-pages-project-gallery_2017-03-23T09:19:15.png'
   screenshot_height: 800
   screenshot_target: 'https://cscanlin.github.io/'
   screenshot_width: 1280
@@ -402,7 +402,7 @@
   pulls_url: 'https://api.github.com/repos/cscanlin/films_api/pulls{/number}'
   pushed_at: '2017-03-18T02:10:14Z'
   releases_url: 'https://api.github.com/repos/cscanlin/films_api/releases{/id}'
-  screenshot: 'films_api_2017-03-23T09:13:02.png'
+  screenshot: 'films_api_2017-03-23T09:19:15.png'
   screenshot_height: 800
   screenshot_target: 'https://films-api.herokuapp.com/films/'
   screenshot_width: 1280
@@ -499,7 +499,7 @@
   pulls_url: 'https://api.github.com/repos/cscanlin/minesweeper/pulls{/number}'
   pushed_at: '2017-03-03T03:20:54Z'
   releases_url: 'https://api.github.com/repos/cscanlin/minesweeper/releases{/id}'
-  screenshot: 'minesweeper_2017-03-23T09:13:02.png'
+  screenshot: 'minesweeper_2017-03-23T09:19:15.png'
   screenshot_height: 450
   screenshot_target: 'https://cscanlin.github.io/minesweeper/'
   screenshot_width: 1280
@@ -610,7 +610,7 @@
   pulls_url: 'https://api.github.com/repos/cscanlin/periodic-table-timeline/pulls{/number}'
   pushed_at: '2017-03-19T03:20:39Z'
   releases_url: 'https://api.github.com/repos/cscanlin/periodic-table-timeline/releases{/id}'
-  screenshot: 'periodic-table-timeline_2017-03-23T09:13:02.png'
+  screenshot: 'periodic-table-timeline_2017-03-23T09:19:15.png'
   screenshot_height: 800
   screenshot_target: 'http://cscanlin.github.io/periodic-table-timeline/'
   screenshot_width: 1280
