@@ -13,6 +13,7 @@ repositories:
     screenshot_target: http://www.mungerbuilder.com/script_builder/pivot_builder/1
 
   - repo_url: https://github.com/cscanlin/choice-optimizer
+    screenshot_height: 650
 
   - repo_url: https://github.com/cscanlin/generator-pages-project-gallery
     screenshot_target: https://cscanlin.github.io/
@@ -21,5 +22,6 @@ repositories:
     screenshot_target: https://films-api.herokuapp.com/films/
 
   - repo_url: https://github.com/cscanlin/minesweeper
+    screenshot_height: 450
 
   - repo_url: https://github.com/cscanlin/periodic-table-timeline
